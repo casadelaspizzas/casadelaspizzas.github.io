@@ -230,7 +230,7 @@ nav ul li a:focus::after {
                 <li>Familiar: S/.35</li>
                 <li>Mediana: S/.18</li>
                 <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Americana', 'Familiar', 35)">Agregar pizza familiar</button>
-                <button class="ver-button" onclick="verImagen('pizza_americana.jpg')">Ver Pizza</button>
+                <button class="ver-button" onclick="verImagen('pizza_americana.jpeg')">Ver Pizza</button>
                 <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Americana', 'Mediana', 18)">Agregar pizza mediana</button>
             </ul>
        </h5>
@@ -487,7 +487,7 @@ nav ul li a:focus::after {
     <!-- Modal para mostrar imágenes -->
     <div id="imageModalAmericana" class="image-modal">
         <span class="image-modal-close" onclick="closeModalAmericana()">&times;</span>
-        <img class="image-modal-content" src="pizza_americana.jpg" alt="Pizza Americana">
+        <img class="image-modal-content" src="pizza_americana.jpeg" alt="Pizza Americana">
     </div>
 
     <div id="imageModalHawaiana" class="image-modal">
@@ -565,7 +565,7 @@ nav ul li a:focus::after {
     });
 
     function verImagen(imageUrl) {
-        if (imageUrl === 'pizza_americana.jpg') {
+        if (imageUrl === 'pizza_americana.jpeg') {
             modalAmericana.style.display = 'block';
         } else if (imageUrl === 'images/pizza_hawaiana.jpg') {
             modalHawaiana.style.display = 'block';
