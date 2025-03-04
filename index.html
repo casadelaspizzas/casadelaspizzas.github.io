@@ -319,10 +319,40 @@ nav ul li a:focus::after {
          <h5>Pizza Continental:
             <ul>
                 <li>Familiar: S/.42</li>
-                <li>Mediana: S/.22</li>
+                <li>Mediana: S/.23</li>
                 <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Continental', 'Familiar', 42)">Agregar pizza familiar</button>
-                <button class="ver-button" onclick="verImagen('cuatro_sabores.jpeg')">Ver Pizza</button>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Continental', 'Mediana', 22)">Agregar pizza mediana</button>
+                <button class="ver-button" onclick="verImagen('pizza_continental.jpeg')">Ver Pizza</button>
+                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Continental', 'Mediana', 23)">Agregar pizza mediana</button>
+
+            </ul>
+        </h5>
+        <h5>Pizza Pepperoni especial:
+            <ul>
+                <li>Familiar: S/.42</li>
+                <li>Mediana: S/.23</li>
+                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Pepperoni especial', 'Familiar', 42)">Agregar pizza familiar</button>
+                <button class="ver-button" onclick="verImagen('pepperoni_especial.jpeg')">Ver Pizza</button>
+                <button class="agregar-button" onclick="agregarAlCarritoClasico('pizza Pepperoni especial', 'Mediana', 23)">Agregar pizza mediana</button>
+
+            </ul>
+        </h5>
+        <h5>Pizza Gouermet clasica:
+            <ul>
+                <li>Familiar: S/.45</li>
+                <li>Mediana: S/.23</li>
+                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Gouermet clasica', 'Familiar', 45)">Agregar pizza familiar</button>
+                <button class="ver-button" onclick="verImagen('gouermet_clasica.jpeg')">Ver Pizza</button>
+                <button class="agregar-button" onclick="agregarAlCarritoClasico('pizza gouermet clasica', 'Mediana', 23)">Agregar pizza mediana</button>
+
+            </ul>
+        </h5>
+        <h5>Pizza Deluxe:
+            <ul>
+                <li>Familiar: S/.47</li>
+                <li>Mediana: S/.24</li>
+                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza deluxe', 'Familiar', 47)">Agregar pizza familiar</button>
+                <button class="ver-button" onclick="verImagen('pizza_deluxe,jpeg')">Ver Pizza</button>
+                <button class="agregar-button" onclick="agregarAlCarritoClasico('pizza deluxe', 'Mediana', 24)">Agregar pizza mediana</button>
 
             </ul>
         </h5>
@@ -550,6 +580,21 @@ nav ul li a:focus::after {
     <img class="image-modal-content" src="pizza_continental.jpeg" alt="pizza continental">
 </div>
 
+<div id="imageModalpizzapepperoniespecial" class="image-modal">
+    <span class="image-modal-close" onclick="closeModalpizzapepperoniespecial()">&times;</span>
+    <img class="image-modal-content" src="pepperoni_especial.jpeg" alt="pizza pepperoni especial">
+</div>
+
+<div id="imageModalpizzagourmetclasica" class="image-modal">
+    <span class="image-modal-close" onclick="closeModalpizzagourmetclasica()">&times;</span>
+    <img class="image-modal-content" src="gourmet_clasica.jpeg" alt="pizza gourmet clasica">
+</div>
+
+<div id="imageModalpizzadeluxe" class="image-modal">
+    <span class="image-modal-close" onclick="closeModalpizzadeluxe()">&times;</span>
+    <img class="image-modal-content" src="pizza_deluxe.jpeg" alt="pizza deluxe">
+</div>
+
   <script>
     const cartasLink = document.getElementById('cartas-link');
     const cartasContainer = document.getElementById('cartas');
@@ -566,6 +611,9 @@ nav ul li a:focus::after {
     const modalPizzadelaCasa = document.getElementById('imageModalPizzadelaCasa');
     const modalpizzacuatrosabores = document.getElementById('imageModalpizzacuatrosabores');
     const modalpizzacontinental = document.getElementById('imageModalpizzacontinental');
+    const modalpizzapepperoniespecial = document.getElementById('imageModalpizzapepperoniespecial');
+    const modalpizzagourmetclasica = document.getElementById('imageModalpizzagourmetclasica');
+    const modalpizzadeluxe = document.getElementById('imageModalpizzadeluxe');
     const modalImage = document.querySelector('.image-modal-content');
     let totalItems = 0;
     let totalPrice = 0;
@@ -603,6 +651,12 @@ nav ul li a:focus::after {
             modalpizzacuatrosabores.style.display = 'block';
         } else if (imageUrl === 'pizza_continental.jpeg') {
             modalpizzacontinental.style.display = 'block' ;
+        } else if (imageUrl === 'pepperoni_especial.jpeg') {
+            modalpizzapepperoniespecial.style.display = 'block' ;
+        } else if (imageUrl === 'gourmet_clasica.jpeg') {
+            modalpizzagourmetclasica.style.display = 'block' ;
+        } else if (imageUrl === 'pizza_deluxe.jpeg') {
+            modalpizzadeluxe.style.display = 'block' ;
         }
         modalImage.src = imageUrl;
     }
@@ -649,6 +703,18 @@ nav ul li a:focus::after {
       
     function closeModalpizzacontinental() {
         modalpizzacontinental.style.display = 'none';
+    }
+
+    function closeModalpizzapepperoniespecial() {
+        modalpizzapepperoniespecial.style.display = 'none';
+    }
+
+    function closeModalpizzagourmetclasica() {
+        modalpizzagourmetclasica.style.display = 'none';
+    }
+
+    function closeModalpizzadeluxe() {
+        modalpizzadeluxe.style.display = 'none';
     }
       
     function agregarItem(producto, precio) {
@@ -733,6 +799,9 @@ nav ul li a:focus::after {
     document.querySelector('#imageModalPizzadelaCasa .image-modal-close').addEventListener('click', closeModalPizzadelaCasa);
     document.querySelector('#imageModalpizzacuatrosabores .image-modal-close').addEventListener('click', closeModalpizzacuatrosabores);
     document.querySelector('#imageModalpizzacontinetal .image-modal-close').addEventListener('click', closeModalpizzacontinental);
+    document.querySelector('#imageModalpizzapepperoniespecial .image-modal-close').addEventListener('click', closeModalpizzapepperoniespecial);
+    document.querySelector('#imageModalpizzagourmetclasica .image-modal-close').addEventListener('click', closeModalpizzagourmetclasica);
+    document.querySelector('#imageModalpizzadeluxe .image-modal-close').addEventListener('click', closeModalpizzadeluxe);
 
 
 </script>
