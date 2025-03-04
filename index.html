@@ -316,6 +316,16 @@ nav ul li a:focus::after {
 
             </ul>
         </h5>
+         <h5>Pizza Continental:
+            <ul>
+                <li>Familiar: S/.42</li>
+                <li>Mediana: S/.22</li>
+                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Continental', 'Familiar', 42)">Agregar pizza familiar</button>
+                <button class="ver-button" onclick="verImagen('cuatro_sabores.jpeg')">Ver Pizza</button>
+                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Continental', 'Mediana', 22)">Agregar pizza mediana</button>
+
+            </ul>
+        </h5>
         <!-- Repite lo mismo para las demás pizzas clásicas -->
     </ul>
 </div>
@@ -534,6 +544,11 @@ nav ul li a:focus::after {
     <span class="image-modal-close" onclick="closeModalpizzacuatrosabores()">&times;</span>
     <img class="image-modal-content" src="cuatro_sabores.jpeg" alt="pizza cuatro sabores">
 </div>
+    
+<div id="imageModalpizzacontinental" class="image-modal">
+    <span class="image-modal-close" onclick="closeModalpizzacontinental()">&times;</span>
+    <img class="image-modal-content" src="pizza_continental.jpeg" alt="pizza continental">
+</div>
 
   <script>
     const cartasLink = document.getElementById('cartas-link');
@@ -550,6 +565,7 @@ nav ul li a:focus::after {
     const modalPioPollo = document.getElementById('imageModalPioPollo');
     const modalPizzadelaCasa = document.getElementById('imageModalPizzadelaCasa');
     const modalpizzacuatrosabores = document.getElementById('imageModalpizzacuatrosabores');
+    const modalpizzacontinental = document.getElementById('imageModalpizzacontinental');
     const modalImage = document.querySelector('.image-modal-content');
     let totalItems = 0;
     let totalPrice = 0;
@@ -585,6 +601,8 @@ nav ul li a:focus::after {
             modalPizzadelaCasa.style.display = 'block';
         } else if (imageUrl === 'cuatro_sabores.jpeg') {
             modalpizzacuatrosabores.style.display = 'block';
+        } else if (imageUrl === 'pizza_continental.jpeg') {
+            modalpizzacontinental.style.display = 'block' ;
         }
         modalImage.src = imageUrl;
     }
@@ -628,7 +646,11 @@ nav ul li a:focus::after {
     function closeModalpizzacuatrosabores() {
         modalpizzacuatrosabores.style.display = 'none';
     }
-
+      
+    function closeModalpizzacontinental() {
+        modalpizzacontinental.style.display = 'none';
+    }
+      
     function agregarItem(producto, precio) {
         totalItems++;
         totalPrice += precio;
@@ -710,6 +732,8 @@ nav ul li a:focus::after {
     document.querySelector('#imageModalPioPollo .image-modal-close').addEventListener('click', closeModalPioPollo);
     document.querySelector('#imageModalPizzadelaCasa .image-modal-close').addEventListener('click', closeModalPizzadelaCasa);
     document.querySelector('#imageModalpizzacuatrosabores .image-modal-close').addEventListener('click', closeModalpizzacuatrosabores);
+    document.querySelector('#imageModalpizzacontinetal .image-modal-close').addEventListener('click', closeModalpizzacontinental);
+
 
 </script>
 </body>
