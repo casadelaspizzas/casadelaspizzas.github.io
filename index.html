@@ -5,11 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casa de las Pizzas</title>
     <style>
+        /* Animación de fondo */
+        @keyframes animatedBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e0c3a5;
+            background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee, #f6d365);
+            background-size: 400% 400%;
+            animation: animatedBackground 15s ease infinite;
             color: #333;
         }
 
