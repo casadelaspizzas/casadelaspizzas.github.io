@@ -5,203 +5,236 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casa de las Pizzas</title>
     <style>
-      body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #e0c3a5;
-    color: #333;
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0c3a5;
+            color: #333;
+        }
 
-header {
-    background-image: url("pizza_logo.png");
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    height: 250px;
-    padding: 20px 0;
-}
+        header {
+            background-image: url("pizza_logo.png");
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            height: 250px;
+            padding: 20px 0;
+        }
 
-nav {
-    background-color: #f3e6d6;
-    text-align: center;
-    padding: 10px 0;
-}
+        nav {
+            background-color: #f3e6d6;
+            text-align: center;
+            padding: 10px 0;
+        }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-nav ul li {
-    margin-bottom: 10px;
-    position: relative;
-    width: 100%;
-}
+        nav ul li {
+            margin-bottom: 10px;
+            position: relative;
+            width: 100%;
+        }
 
-nav ul li a {
-    display: inline-block;
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-    text-transform: uppercase;
-    padding: 15px 20px;
-    border-radius: 30px;
-    transition: all 0.3s ease;
-    position: relative;
-}
+        nav ul li a {
+            display: inline-block;
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            text-transform: uppercase;
+            padding: 15px 20px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
 
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #333;
-    transition: all 0.3s ease;
-    opacity: 0;
-}
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #333;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
 
-nav ul li a:hover,
-nav ul li a:focus {
-    background-color: #333;
-    color: #fff;
-}
+        nav ul li a:hover,
+        nav ul li a:focus {
+            background-color: #333;
+            color: #fff;
+        }
 
-nav ul li a:hover::after,
-nav ul li a:focus::after {
-    opacity: 1;
-}
+        nav ul li a:hover::after,
+        nav ul li a:focus::after {
+            opacity: 1;
+        }
 
-.cartas-container {
-    text-align: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    background-color: rgba(255, 255, 255, 0.9);
-    display: none;
-    padding: 20px;
-    box-sizing: border-box;
-}
+        .cartas-container {
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: none;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-.cartas-container img {
-    width: 80%;
-    max-width: 600px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
+        .cartas-container img {
+            width: 80%;
+            max-width: 600px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
 
-.back-to-menu-button {
-    position: fixed;
-    top: 10px; /* Ajusta según sea necesario */
-    right: 10px; /* Ajusta según sea necesario */
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
-}
+        .back-to-menu-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+        }
 
-.back-to-menu-button:hover {
-    background-color: #555;
-}
+        .back-to-menu-button:hover {
+            background-color: #555;
+        }
 
-.buy-now-button {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+        .buy-now-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-.buy-now-button:hover {
-    background-color: #45a049;
-}
+        .buy-now-button:hover {
+            background-color: #45a049;
+        }
 
-.cartas-columns {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
+        .cartas-columns {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
 
-.cartas-column {
-    flex: 1;
-    min-width: 200px;
-    margin: 10px auto;
-    padding: 10px;
-    background-color: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+        .cartas-column {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px auto;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-.cartas-column h3 {
-    margin-top: 0;
-}
+        .cartas-column h3 {
+            margin-top: 0;
+        }
 
-.cartas-column ul {
-    list-style-type: none;
-    padding: 0;
-}
+        .cartas-column ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-.cartas-column ul ul {
-    list-style-type: none;
-    padding-left: 20px;
-}
+        .cartas-column ul ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
 
-.image-modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.9);
-}
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+        }
 
-.image-modal-content {
-    margin: 15% auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-}
+        .image-modal-content {
+            margin: 15% auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
 
-.image-modal-close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
-}
+        .image-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
 
-.image-modal-close:hover,
-.image-modal-close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
+        .image-modal-close:hover,
+        .image-modal-close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
 
+        .promociones-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .promociones-buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .promociones-buttons button:hover {
+            opacity: 0.9;
+        }
+
+        .promociones-buttons button:nth-child(1) {
+            background-color: #4CAF50; /* Verde */
+            color: white;
+        }
+
+        .promociones-buttons button:nth-child(2) {
+            background-color: #2196F3; /* Azul */
+            color: white;
+        }
+
+        .promociones-buttons button:nth-child(3) {
+            background-color: #FF9800; /* Naranja */
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -212,276 +245,317 @@ nav ul li a:focus::after {
         <ul>
             <li><a href="#" onclick="showPromociones()">🏠Promociones✔</a></li>
             <li><a href="#cartas" id="cartas-link">🏠Cartas✔</a></li>
-    <li><a href="#" onclick="showComoRealizarCompra()">🏠¿Cómo realizar mi compra?✔</a></li>
+            <li><a href="#" onclick="showComoRealizarCompra()">🏠¿Cómo realizar mi compra?✔</a></li>
             <li><a href="#" onclick="showSobreNosotros()">🏠Sobre Nosotros✔</a></li>
             <li><a href="https://wa.me/926173350" target="_blank">🏠Contáctanos✔</a></li>
-
         </ul>
     </nav>
     <main>
+        <!-- Sección de Cartas -->
         <div id="cartas" class="cartas-container">
             <h2>Cartas</h2>
-
-<div class="cartas-column">
-    <h3>✔Pizzas Clásicas</h3>
-    <ul>
-        <h5>Pizza Americana: 
-            <ul>
-                <li>Familiar: S/.35</li>
-                <li>Mediana: S/.18</li>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Americana', 'Familiar', 35)">Agregar pizza familiar</button>
-                <button class="ver-button" onclick="verImagen('pizza_americana.jpeg')">Ver Pizza</button>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Americana', 'Mediana', 18)">Agregar pizza mediana</button>
-            </ul>
-       </h5>
-        <h5>Pizza Hawaiana:
-            <ul>
-                <li>Familiar: S/.37</li>
-                <li>Mediana: S/.19</li>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Hawaiana', 'Familiar', 37)">Agregar pizza familiar</button>
-                <button class="ver-button" onclick="verImagen('pizza_hawaiana.jpeg')">Ver Pizza</button>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Hawaiana', 'Mediana', 19)">Agregar pizza mediana</button>
-            </ul>
-        </h5>
-        <h5>Pizza Argentina:
-            <ul>
-                <li>Familiar: S/.39</li>
-                <li>Mediana: S/.21</li>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Argentina', 'Familiar', 39)">Agregar pizza familiar</button>
-                <button class="ver-button" onclick="verImagen('pizza_argentina.jpeg')">Ver Pizza</button>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Argentina', 'Mediana', 21)">Agregar pizza mediana</button>
-            </ul>
-        </h5>
-        <h5>Pizza Tropical:
-            <ul>
-                <li>Familiar: S/.39</li>
-                <li>Mediana: S/.21</li>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Tropical', 'Familiar', 39)">Agregar pizza familiar</button>
-                <button class="ver-button" onclick="verImagen('pizza_tropical.jpeg')">Ver Pizza</button>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Tropical', 'Mediana', 21)">Agregar pizza mediana</button>
-            </ul>
-        </h5>
-        <h5>Pizza Pepperoni:
-            <ul>
-                <li>Familiar: S/.39</li>
-                <li>Mediana: S/.21</li>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Pepperoni', 'Familiar', 39)">Agregar pizza familiar</button>
-                <button class="ver-button" onclick="verImagen('pizza_pepperoni.jpeg')">Ver Pizza</button>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Pepperoni', 'Mediana', 21)">Agregar pizza mediana</button>
-            </ul>
-        </h5>
-        <h5>Pizza Vegetariana:
-            <ul>
-                <li>Familiar: S/.41</li>
-                <li>Mediana: S/.21</li>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Vegetariana', 'Familiar', 41)">Agregar pizza familiar</button>
-                <button class="ver-button" onclick="verImagen('pizza_vegetariana.jpeg')">Ver Pizza</button>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Vegetariana', 'Mediana', 21)">Agregar pizza mediana</button>
-            </ul>
-        </h5>
-        <h5>Pizza PepperoPiña:
-            <ul>
-                <li>Familiar: S/.44</li>
-                <li>Mediana: S/.22</li>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza PepperoPiña', 'Familiar', 44)">Agregar pizza familiar</button>
-                <button class="ver-button" onclick="verImagen('pizza_pepperopina.jpeg')">Ver Pizza</button>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza PepperoPiña', 'Mediana', 22)">Agregar pizza mediana</button>
-            </ul>
-        </h5>
-        <h5>Pizza Piopollo:
-            <ul>
-                <li>Familiar: S/.48</li>
-                <li>Mediana: S/.25</li>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Piopollo', 'Familiar', 48)">Agregar pizza familiar</button>
-                <button class="ver-button" onclick="verImagen('pizza_piopollo.jpeg')">Ver Pizza</button>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Piopollo', 'Mediana', 25)">Agregar pizza mediana</button>
-            </ul>
-        </h5>
-        <h5>Pizza de la Casa:
-            <ul>
-                <li>Familiar: S/.48</li>
-                <li>Mediana: S/.25</li>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza de la Casa', 'Familiar', 48)">Agregar pizza familiar</button>
-                <button class="ver-button" onclick="verImagen('pizza_casa.jpeg')">Ver Pizza</button>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza de la Casa', 'Mediana', 25)">Agregar pizza mediana</button>
-            </ul>
-        </h5>
-        <h5>Pizza Cuatro Sabores:
-            <ul>
-                <li>Familiar: S/.48</li>
-                <li>Mediana: S/.25</li>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Cuatro Sabores', 'Familiar', 48)">Agregar pizza familiar</button>
-                <button class="ver-button" onclick="verImagen('cuatro_sabores.jpeg')">Ver Pizza</button>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Cuatro Sabores', 'Mediana', 25)">Agregar pizza mediana</button>
-
-            </ul>
-        </h5>
-         <h5>Pizza Continental:
-            <ul>
-                <li>Familiar: S/.42</li>
-                <li>Mediana: S/.23</li>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Continental', 'Familiar', 42)">Agregar pizza familiar</button>
-                <button class="ver-button" onclick="verImagen('pizza_continental.jpeg')">Ver Pizza</button>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Continental', 'Mediana', 23)">Agregar pizza mediana</button>
-
-            </ul>
-        </h5>
-        <h5>Pizza Pepperoni especial:
-            <ul>
-                <li>Familiar: S/.42</li>
-                <li>Mediana: S/.23</li>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Pepperoni especial', 'Familiar', 42)">Agregar pizza familiar</button>
-                <button class="ver-button" onclick="verImagen('pepperoni_especial.jpeg')">Ver Pizza</button>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('pizza Pepperoni especial', 'Mediana', 23)">Agregar pizza mediana</button>
-
-            </ul>
-        </h5>
-        <h5>Pizza Gouermet clasica:
-            <ul>
-                <li>Familiar: S/.45</li>
-                <li>Mediana: S/.23</li>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Gouermet clasica', 'Familiar', 45)">Agregar pizza familiar</button>
-                <button class="ver-button" onclick="verImagen('gouermet_clasica.jpeg')">Ver Pizza</button>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('pizza gouermet clasica', 'Mediana', 23)">Agregar pizza mediana</button>
-
-            </ul>
-        </h5>
-        <h5>Pizza Deluxe:
-            <ul>
-                <li>Familiar: S/.47</li>
-                <li>Mediana: S/.24</li>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza deluxe', 'Familiar', 47)">Agregar pizza familiar</button>
-                <button class="ver-button" onclick="verImagen('pizza_deluxe,jpeg')">Ver Pizza</button>
-                <button class="agregar-button" onclick="agregarAlCarritoClasico('pizza deluxe', 'Mediana', 24)">Agregar pizza mediana</button>
-
-            </ul>
-        </h5>
-        <!-- Repite lo mismo para las demás pizzas clásicas -->
-    </ul>
-</div>
-
-
-             <div class="cartas-column">
-    <h3>✔Carta Personalizada</h3>
-    <ul>
-        <h5><li style="text-decoration: underline;">🧀Extra Queso:</li>
-            <ul>
-                <li>+S/.5🧀Extra Mozzarella:</li>
-                <li>+S/.4🧀Extra Suizo:</li>
-                <li>+S/.5🧀Extra Edam:</li>
-                <button class="agregar-button" onclick="agregarItem('Extra Mozzarella', 5)">Agregar Extra Mozzarella</button>
-                <button class="agregar-button" onclick="agregarItem('Extra Suizo', 4)">Agregar Extra Suizo</button>
-                <button class="agregar-button" onclick="agregarItem('Extra Edam', 5)">Agregar Extra Edam</button>
-            </ul>
-        </h5>
-    </ul>
-</div>
-
-<div class="cartas-column">
-    <h3>✔Bebidas y Adicionales</h3>
-    <ul>
-        <h4><u>Bebidas:</u></h4>
-        <ul>
-            <h5>Frappe de Oreo:
-                <ul>
-                    <li>Grande: S/.8</li>
-                    <li>Pequeño: S/.6</li>
-                    <button class="agregar-button" onclick="agregarItem('Frappe Grande', 8)">Agregar Frappe de Oreo Grande</button>
-                    <button class="agregar-button" onclick="agregarItem('Frappe Pequeño', 6)">Agregar Frappe de Oreo Pequeño</button>
-                </ul>
-            </h5>
-            <h5>Frappe de Café:
-                <ul>
-                    <li>Grande: S/.7</li>
-                    <li>Pequeño: S/.5</li>
-                    <button class="agregar-button" onclick="agregarItem('Frappe Grande', 7)">Agregar Frappe de Café Grande</button>
-                    <button class="agregar-button" onclick="agregarItem('Frappe Pequeño', 5)">Agregar Frappe de Café Pequeño</button>
-                </ul>
-            </h5>
-            <h5>Frappe de Plátano:
-                <ul>
-                    <li>Grande: S/.6</li>
-                    <li>Pequeño: S/.4</li>
-                    <button class="agregar-button" onclick="agregarItem('Frappe Grande', 6)">Agregar Frappe de Plátano Grande</button>
-                    <button class="agregar-button" onclick="agregarItem('Frappe Pequeño', 4)">Agregar Frappe de Plátano Pequeño</button>
-                </ul>
-            </h5>
-            
-            <h5>Shake de Fruta:
-                <ul>
-                    <li>Grande: S/.5</li>
-                    <li>Pequeño: S/.4</li>
-                    <li>(Fresa, arándano, aguaymanto, maracuyá, durazno, guanábana)</li>
-                    <button class="agregar-button" onclick="agregarItem('Shake Grande', 5)">Agregar Shake Grande</button>
-                    <button class="agregar-button" onclick="agregarItem('Shake Pequeño', 4)">Agregar Shake Pequeño</button>
-                </ul>
-            </h5>
-            <h5>Jugo de Piña:
-                <ul>
-                    <li>Grande: S/.3</li>
-                    <li>Pequeño: S/.2.50</li>
-                    <button class="agregar-button" onclick="agregarItem('Jugo Grande', 3)">Agregar Jugo de Piña Grande</button>
-                    <button class="agregar-button" onclick="agregarItem('Jugo Pequeño', 2.50)">Agregar Jugo de Piña Pequeño</button>
-                </ul>
-            </h5>
-            <h5>Jugo de Fruta:
-                <ul>
-                    <li>Grande: S/.3</li>
-                    <li>Pequeño: S/.2.50</li>
-                    <li>(Maracuyá, durazno, guanábana, piña, papaya, melón, mixto)</li>
-                    <button class="agregar-button" onclick="agregarItem('Jugo Fruta Grande', 3)">Agregar Jugo Fruta Grande</button>
-                    <button class="agregar-button" onclick="agregarItem('Jugo Fruta Pequeño', 2.50)">Agregar Jugo Fruta Pequeño</button>
-                </ul>
-            </h5>
-            <h5>Limonada Frozen:
-                <ul>
-                    <li>Grande: S/.3</li>
-                    <li>Pequeño: S/.2</li>
-                    <button class="agregar-button" onclick="agregarItem('Limonada Grande', 3)">Agregar Limonada Grande</button>
-                    <button class="agregar-button" onclick="agregarItem('Limonada Pequeña', 2)">Agregar Limonada Pequeña</button>
-                </ul>
-            </h5>
-            <h5>Gaseosas:
-                <ul>
-                    <li>Pepsi: S/.1.50</li>
-                    <li>Spray: S/.1.50</li>
-                    <li>Concordia: S/.1.50</li>
-                    <button class="agregar-button" onclick="agregarItem('Gaseosa', 1.50)">Agregar Gaseosa</button>
-                </ul>
-            </h5>
-        </ul>
-        <h4><u>Adicionales:</u></h4>
-        <ul>
-            <h5>Pan al ajo:
-                <ul>
-                    <li>4 panes al ajo: S/.5</li>
-                    <li>4 panes al ajo especiales: S/.7</li>
-                    <button class="agregar-button" onclick="agregarItem('4 panes al ajo', 5)">Agregar 4u</button>
-                    <button class="agregar-button" onclick="agregarItem('4 panes al ajo especiales', 7)">Agregar 4u especiales</button>
-                </ul>
-            </h5>
-            <h5>Tequeños Rellenos de Queso:
-                <ul>
-                    <li>4 unidades: S/.5</li>
-                    <button class="agregar-button" onclick="agregarItem('Tequeños 4 unidades', 5)">Agregar Tequeños</button>
-                </ul>
-            </h5>
-        </ul>
-    </ul>
-</div>
-
-<button class="back-to-menu-button">Volver al Menú Principal</button>
-<button class="buy-now-button">Realizar compra</button>
-
+            <div class="cartas-columns">
+                <div class="cartas-column">
+                    <h3>✔Pizzas Clásicas</h3>
+                    <ul>
+                        <h5>Pizza Americana: 
+                            <ul>
+                                <li>Familiar: S/.35</li>
+                                <li>Mediana: S/.18</li>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Americana', 'Familiar', 35)">Agregar pizza familiar</button>
+                                <button class="ver-button" onclick="verImagen('pizza_americana.jpeg')">Ver Pizza</button>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Americana', 'Mediana', 18)">Agregar pizza mediana</button>
+                            </ul>
+                        </h5>
+                        <h5>Pizza Hawaiana:
+                            <ul>
+                                <li>Familiar: S/.37</li>
+                                <li>Mediana: S/.19</li>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Hawaiana', 'Familiar', 37)">Agregar pizza familiar</button>
+                                <button class="ver-button" onclick="verImagen('pizza_hawaiana.jpeg')">Ver Pizza</button>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Hawaiana', 'Mediana', 19)">Agregar pizza mediana</button>
+                            </ul>
+                        </h5>
+                        <h5>Pizza Argentina:
+                            <ul>
+                                <li>Familiar: S/.39</li>
+                                <li>Mediana: S/.21</li>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Argentina', 'Familiar', 39)">Agregar pizza familiar</button>
+                                <button class="ver-button" onclick="verImagen('pizza_argentina.jpeg')">Ver Pizza</button>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Argentina', 'Mediana', 21)">Agregar pizza mediana</button>
+                            </ul>
+                        </h5>
+                        <h5>Pizza Tropical:
+                            <ul>
+                                <li>Familiar: S/.39</li>
+                                <li>Mediana: S/.21</li>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Tropical', 'Familiar', 39)">Agregar pizza familiar</button>
+                                <button class="ver-button" onclick="verImagen('pizza_tropical.jpeg')">Ver Pizza</button>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Tropical', 'Mediana', 21)">Agregar pizza mediana</button>
+                            </ul>
+                        </h5>
+                        <h5>Pizza Pepperoni:
+                            <ul>
+                                <li>Familiar: S/.39</li>
+                                <li>Mediana: S/.21</li>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Pepperoni', 'Familiar', 39)">Agregar pizza familiar</button>
+                                <button class="ver-button" onclick="verImagen('pizza_pepperoni.jpeg')">Ver Pizza</button>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Pepperoni', 'Mediana', 21)">Agregar pizza mediana</button>
+                            </ul>
+                        </h5>
+                        <h5>Pizza Vegetariana:
+                            <ul>
+                                <li>Familiar: S/.41</li>
+                                <li>Mediana: S/.21</li>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Vegetariana', 'Familiar', 41)">Agregar pizza familiar</button>
+                                <button class="ver-button" onclick="verImagen('pizza_vegetariana.jpeg')">Ver Pizza</button>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Vegetariana', 'Mediana', 21)">Agregar pizza mediana</button>
+                            </ul>
+                        </h5>
+                        <h5>Pizza PepperoPiña:
+                            <ul>
+                                <li>Familiar: S/.44</li>
+                                <li>Mediana: S/.22</li>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza PepperoPiña', 'Familiar', 44)">Agregar pizza familiar</button>
+                                <button class="ver-button" onclick="verImagen('pizza_pepperopina.jpeg')">Ver Pizza</button>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza PepperoPiña', 'Mediana', 22)">Agregar pizza mediana</button>
+                            </ul>
+                        </h5>
+                        <h5>Pizza Piopollo:
+                            <ul>
+                                <li>Familiar: S/.48</li>
+                                <li>Mediana: S/.25</li>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Piopollo', 'Familiar', 48)">Agregar pizza familiar</button>
+                                <button class="ver-button" onclick="verImagen('pizza_piopollo.jpeg')">Ver Pizza</button>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Piopollo', 'Mediana', 25)">Agregar pizza mediana</button>
+                            </ul>
+                        </h5>
+                        <h5>Pizza de la Casa:
+                            <ul>
+                                <li>Familiar: S/.48</li>
+                                <li>Mediana: S/.25</li>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza de la Casa', 'Familiar', 48)">Agregar pizza familiar</button>
+                                <button class="ver-button" onclick="verImagen('pizza_casa.jpeg')">Ver Pizza</button>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza de la Casa', 'Mediana', 25)">Agregar pizza mediana</button>
+                            </ul>
+                        </h5>
+                        <h5>Pizza Cuatro Sabores:
+                            <ul>
+                                <li>Familiar: S/.48</li>
+                                <li>Mediana: S/.25</li>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Cuatro Sabores', 'Familiar', 48)">Agregar pizza familiar</button>
+                                <button class="ver-button" onclick="verImagen('cuatro_sabores.jpeg')">Ver Pizza</button>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Cuatro Sabores', 'Mediana', 25)">Agregar pizza mediana</button>
+                
+                            </ul>
+                        </h5>
+                        <h5>Pizza Continental:
+                            <ul>
+                                <li>Familiar: S/.42</li>
+                                <li>Mediana: S/.23</li>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Continental', 'Familiar', 42)">Agregar pizza familiar</button>
+                                <button class="ver-button" onclick="verImagen('pizza_continental.jpeg')">Ver Pizza</button>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Continental', 'Mediana', 23)">Agregar pizza mediana</button>
+                
+                            </ul>
+                        </h5>
+                        <h5>Pizza Pepperoni especial:
+                            <ul>
+                                <li>Familiar: S/.42</li>
+                                <li>Mediana: S/.23</li>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Pepperoni especial', 'Familiar', 42)">Agregar pizza familiar</button>
+                                <button class="ver-button" onclick="verImagen('pepperoni_especial.jpeg')">Ver Pizza</button>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('pizza Pepperoni especial', 'Mediana', 23)">Agregar pizza mediana</button>
+                
+                            </ul>
+                        </h5>
+                        <h5>Pizza Gouermet clasica:
+                            <ul>
+                                <li>Familiar: S/.45</li>
+                                <li>Mediana: S/.23</li>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza Gouermet clasica', 'Familiar', 45)">Agregar pizza familiar</button>
+                                <button class="ver-button" onclick="verImagen('gouermet_clasica.jpeg')">Ver Pizza</button>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('pizza gouermet clasica', 'Mediana', 23)">Agregar pizza mediana</button>
+                
+                            </ul>
+                        </h5>
+                        <h5>Pizza Deluxe:
+                            <ul>
+                                <li>Familiar: S/.47</li>
+                                <li>Mediana: S/.24</li>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('Pizza deluxe', 'Familiar', 47)">Agregar pizza familiar</button>
+                                <button class="ver-button" onclick="verImagen('pizza_deluxe,jpeg')">Ver Pizza</button>
+                                <button class="agregar-button" onclick="agregarAlCarritoClasico('pizza deluxe', 'Mediana', 24)">Agregar pizza mediana</button>
+                
+                            </ul>
+                        </h5>
+                        <!-- Repite lo mismo para las demás pizzas clásicas -->
+                    </ul>
+                </div>
+                <div class="cartas-column">
+                    <h3>✔Carta Personalizada</h3>
+                    <ul>
+                        <h5><li style="text-decoration: underline;">🧀Extra Queso:</li>
+                            <ul>
+                                <li>+S/.5🧀Extra Mozzarella:</li>
+                                <li>+S/.4🧀Extra Suizo:</li>
+                                <li>+S/.5🧀Extra Edam:</li>
+                                <button class="agregar-button" onclick="agregarItem('Extra Mozzarella', 5)">Agregar Extra Mozzarella</button>
+                                <button class="agregar-button" onclick="agregarItem('Extra Suizo', 4)">Agregar Extra Suizo</button>
+                                <button class="agregar-button" onclick="agregarItem('Extra Edam', 5)">Agregar Extra Edam</button>
+                            </ul>
+                        </h5>
+                    </ul>
+                </div>
+                <div class="cartas-column">
+                    <h3>✔Bebidas y Adicionales</h3>
+                    <ul>
+                        <h4><u>Bebidas:</u></h4>
+                        <ul>
+                            <h5>Frappe de Oreo:
+                                <ul>
+                                    <li>Grande: S/.8</li>
+                                    <li>Pequeño: S/.6</li>
+                                    <button class="agregar-button" onclick="agregarItem('Frappe Grande', 8)">Agregar Frappe de Oreo Grande</button>
+                                    <button class="agregar-button" onclick="agregarItem('Frappe Pequeño', 6)">Agregar Frappe de Oreo Pequeño</button>
+                                </ul>
+                            </h5>
+                            <h5>Frappe de Café:
+                                <ul>
+                                    <li>Grande: S/.7</li>
+                                    <li>Pequeño: S/.5</li>
+                                    <button class="agregar-button" onclick="agregarItem('Frappe Grande', 7)">Agregar Frappe de Café Grande</button>
+                                    <button class="agregar-button" onclick="agregarItem('Frappe Pequeño', 5)">Agregar Frappe de Café Pequeño</button>
+                                </ul>
+                            </h5>
+                            <h5>Frappe de Plátano:
+                                <ul>
+                                    <li>Grande: S/.6</li>
+                                    <li>Pequeño: S/.4</li>
+                                    <button class="agregar-button" onclick="agregarItem('Frappe Grande', 6)">Agregar Frappe de Plátano Grande</button>
+                                    <button class="agregar-button" onclick="agregarItem('Frappe Pequeño', 4)">Agregar Frappe de Plátano Pequeño</button>
+                                </ul>
+                            </h5>
+                            
+                            <h5>Shake de Fruta:
+                                <ul>
+                                    <li>Grande: S/.5</li>
+                                    <li>Pequeño: S/.4</li>
+                                    <li>(Fresa, arándano, aguaymanto, maracuyá, durazno, guanábana)</li>
+                                    <button class="agregar-button" onclick="agregarItem('Shake Grande', 5)">Agregar Shake Grande</button>
+                                    <button class="agregar-button" onclick="agregarItem('Shake Pequeño', 4)">Agregar Shake Pequeño</button>
+                                </ul>
+                            </h5>
+                            <h5>Jugo de Piña:
+                                <ul>
+                                    <li>Grande: S/.3</li>
+                                    <li>Pequeño: S/.2.50</li>
+                                    <button class="agregar-button" onclick="agregarItem('Jugo Grande', 3)">Agregar Jugo de Piña Grande</button>
+                                    <button class="agregar-button" onclick="agregarItem('Jugo Pequeño', 2.50)">Agregar Jugo de Piña Pequeño</button>
+                                </ul>
+                            </h5>
+                            <h5>Jugo de Fruta:
+                                <ul>
+                                    <li>Grande: S/.3</li>
+                                    <li>Pequeño: S/.2.50</li>
+                                    <li>(Maracuyá, durazno, guanábana, piña, papaya, melón, mixto)</li>
+                                    <button class="agregar-button" onclick="agregarItem('Jugo Fruta Grande', 3)">Agregar Jugo Fruta Grande</button>
+                                    <button class="agregar-button" onclick="agregarItem('Jugo Fruta Pequeño', 2.50)">Agregar Jugo Fruta Pequeño</button>
+                                </ul>
+                            </h5>
+                            <h5>Limonada Frozen:
+                                <ul>
+                                    <li>Grande: S/.3</li>
+                                    <li>Pequeño: S/.2</li>
+                                    <button class="agregar-button" onclick="agregarItem('Limonada Grande', 3)">Agregar Limonada Grande</button>
+                                    <button class="agregar-button" onclick="agregarItem('Limonada Pequeña', 2)">Agregar Limonada Pequeña</button>
+                                </ul>
+                            </h5>
+                            <h5>Gaseosas:
+                                <ul>
+                                    <li>Pepsi: S/.1.50</li>
+                                    <li>Spray: S/.1.50</li>
+                                    <li>Concordia: S/.1.50</li>
+                                    <button class="agregar-button" onclick="agregarItem('Gaseosa', 1.50)">Agregar Gaseosa</button>
+                                </ul>
+                            </h5>
+                        </ul>
+                        <h4><u>Adicionales:</u></h4>
+                        <ul>
+                            <h5>Pan al ajo:
+                                <ul>
+                                    <li>4 panes al ajo: S/.5</li>
+                                    <li>4 panes al ajo especiales: S/.7</li>
+                                    <button class="agregar-button" onclick="agregarItem('4 panes al ajo', 5)">Agregar 4u</button>
+                                    <button class="agregar-button" onclick="agregarItem('4 panes al ajo especiales', 7)">Agregar 4u especiales</button>
+                                </ul>
+                            </h5>
+                            <h5>Tequeños Rellenos de Queso:
+                                <ul>
+                                    <li>4 unidades: S/.5</li>
+                                    <button class="agregar-button" onclick="agregarItem('Tequeños 4 unidades', 5)">Agregar Tequeños</button>
+                                </ul>
+                            </h5>
+                            <!-- Repite lo mismo para las demás bebidas -->
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+            <button class="back-to-menu-button">Volver al Menú Principal</button>
+            <button class="buy-now-button">Realizar compra</button>
         </div>
-        
-        
-        <div id="promociones" class="cartas-container">
-    <h2>Promociones</h2>
-    <p>¡Aprovecha nuestra promocion de pizza tropical al 10% de descuento.</p>
-        <p>🎉 ¡Celebra con nosotros! 🍕🎈 Pizzas con descuento por nuestro mes de aniversario al ordenar aquí. 🎉</p>
 
-    <button class="back-to-menu-button" onclick="closePromociones()">❌</button>
+        <!-- Sección de Promociones -->
+        <div id="promociones" class="cartas-container">
+            <h2>Promociones</h2>
+            <div class="promociones-buttons">
+                <button onclick="verPromocionesGenerales()">Promociones Generales</button>
+                <button onclick="mostrarPromocionesClienteFrecuente()">Promociones Cliente Frecuente</button>
+                <button onclick="mostrarPromocionesClienteNuevo()">Promociones Cliente Nuevo</button>
+            </div>
+
+            <!-- Promociones Cliente Frecuente -->
+            <div id="promociones-cliente-frecuente" style="display: none;">
+                <h3>Combos con 10% de descuento</h3>
+                <ul>
+                    <li>
+                        <strong>Combo 1:</strong> Pizza Americana Familiar + Pizza Hawaiana Mediana
+                        <button onclick="agregarComboFrecuente('Combo 1', 62)">Agregar Combo (S/.62)</button>
+                    </li>
+                    <li>
+                        <strong>Combo 2:</strong> Pizza Pepperoni Familiar + Pizza Tropical Mediana
+                        <button onclick="agregarComboFrecuente('Combo 2', 66)">Agregar Combo (S/.66)</button>
+                    </li>
+                    <li>
+                        <strong>Combo 3:</strong> Pizza Vegetariana Familiar + Pizza Argentina Mediana
+                        <button onclick="agregarComboFrecuente('Combo 3', 68)">Agregar Combo (S/.68)</button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Promociones Cliente Nuevo -->
+            <div id="promociones-cliente-nuevo" style="display: none;">
+                <h3>¡Bebida gratis con tu pizza!</h3>
+                <ul>
+                    <li>
+                        <strong>Pizza Americana Familiar + Gaseosa Gratis</strong>
+                        <button onclick="agregarPizzaConBebida('Pizza Americana Familiar', 35)">Agregar (S/.35)</button>
+                    </li>
+                    <li>
+                        <strong>Pizza Hawaiana Mediana + Gaseosa Gratis</strong>
+                        <button onclick="agregarPizzaConBebida('Pizza Hawaiana Mediana', 19)">Agregar (S/.19)</button>
+                    </li>
+                    <li>
+                        <strong>Pizza Pepperoni Familiar + Gaseosa Gratis</strong>
+                        <button onclick="agregarPizzaConBebida('Pizza Pepperoni Familiar', 39)">Agregar (S/.39)</button>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="back-to-menu-button" onclick="closePromociones()">❌</button>
+        </div>
+
+        <!-- Sección "Sobre Nosotros" -->
     </div>
     
     <div id="sobre-nosotros-overlay" class="cartas-container">
@@ -502,27 +576,22 @@ nav ul li a:focus::after {
     <button class="back-to-menu-button" onclick="closeSobreNosotros()">Cerrar</button>
 </div>
 
-
-<div id="como-realizar-compra-overlay" class="cartas-container">
-    <h2>¿Cómo realizar mi compra?</h2>
-    <p>Te explicamos cómo puedes realizar tu compra en tres simples pasos:</p>
-    <ol>
-        <li>Ingresa en el menú a la opcion de CARTAS.</li>
-        <li>Selecciona tus pizzas favoritas y agrégalas al carrito.</li>
-        <li> Presiona el boton verde (Realizar compra) y ¡listo! Pronto recibirás tus pizzas en la puerta de tu casa.</li>
-    </ol>
-    <button class="back-to-menu-button" onclick="closeComoRealizarCompra()">Cerrar</button>
-</div>
-
-
-        
-        
+        <!-- Sección "¿Cómo realizar mi compra?" -->
+        <div id="como-realizar-compra-overlay" class="cartas-container">
+            <h2>¿Cómo realizar mi compra?</h2>
+            <p>Te explicamos cómo puedes realizar tu compra en tres simples pasos:</p>
+            <ol>
+                <li>Ingresa en el menú a la opcion de CARTAS.</li>
+                <li>Selecciona tus pizzas favoritas y agrégalas al carrito.</li>
+                <li> Presiona el boton verde (Realizar compra) y ¡listo! Pronto recibirás tus pizzas en la puerta de tu casa.</li>
+            </ol>
+            <button class="back-to-menu-button" onclick="closeComoRealizarCompra()">Cerrar</button>
+        </div>
     </main>
 
-<footer>
-    &copy; 2024 Fernando José Zapata Aquino.
-</footer>
-
+    <footer>
+        &copy; 2024 Fernando José Zapata Aquino.
+    </footer>
 
     <!-- Modal para mostrar imágenes -->
     <div id="imageModalAmericana" class="image-modal">
@@ -595,215 +664,256 @@ nav ul li a:focus::after {
     <img class="image-modal-content" src="pizza_deluxe.jpeg" alt="pizza deluxe">
 </div>
 
-  <script>
-    const cartasLink = document.getElementById('cartas-link');
-    const cartasContainer = document.getElementById('cartas');
-    const backButton = document.querySelector('.back-to-menu-button');
-    const buyNowButton = document.querySelector('.buy-now-button');
-    const modalAmericana = document.getElementById('imageModalAmericana');
-    const modalHawaiana = document.getElementById('imageModalHawaiana');
-    const modalArgentina = document.getElementById('imageModalArgentina');
-    const modalTropical = document.getElementById('imageModalTropical');
-    const modalPepperoni = document.getElementById('imageModalPepperoni');
-    const modalpizzavegetariana = document.getElementById('imageModalpizzavegetariana');
-    const modalPepperoPina = document.getElementById('imageModalPepperoPina');
-    const modalPioPollo = document.getElementById('imageModalPioPollo');
-    const modalPizzadelaCasa = document.getElementById('imageModalPizzadelaCasa');
-    const modalpizzacuatrosabores = document.getElementById('imageModalpizzacuatrosabores');
-    const modalpizzacontinental = document.getElementById('imageModalpizzacontinental');
-    const modalpizzapepperoniespecial = document.getElementById('imageModalpizzapepperoniespecial');
-    const modalpizzagourmetclasica = document.getElementById('imageModalpizzagourmetclasica');
-    const modalpizzadeluxe = document.getElementById('imageModalpizzadeluxe');
-    const modalImage = document.querySelector('.image-modal-content');
-    let totalItems = 0;
-    let totalPrice = 0;
-    let cart = [];
-
-    cartasLink.addEventListener('click', function(event) {
-        event.preventDefault();
-        cartasContainer.style.display = 'block';
-    });
-
-    backButton.addEventListener('click', function() {
-        cartasContainer.style.display = 'none';
-    });
-
-    function verImagen(imageUrl) {
-        if (imageUrl === 'pizza_americana.jpeg') {
-            modalAmericana.style.display = 'block';
-        } else if (imageUrl === 'pizza_hawaiana.jpeg') {
-            modalHawaiana.style.display = 'block';
-        } else if (imageUrl === 'pizza_argentina.jpeg') {
-            modalArgentina.style.display = 'block';
-        } else if (imageUrl === 'pizza_tropical.jpeg') {
-            modalTropical.style.display = 'block';
-        } else if (imageUrl === 'pizza_pepperoni.jpeg') {
-            modalPepperoni.style.display = 'block';
-        } else if (imageUrl === 'pizza_vegetariana.jpeg') {
-            modalpizzavegetariana.style.display = 'block';
-        } else if (imageUrl === 'pizza_pepperopina.jpeg') {
-            modalPepperoPina.style.display = 'block';
-        } else if (imageUrl === 'pizza_piopollo.jpeg') {
-            modalPioPollo.style.display = 'block';
-        } else if (imageUrl === 'pizza_casa.jpeg') {
-            modalPizzadelaCasa.style.display = 'block';
-        } else if (imageUrl === 'cuatro_sabores.jpeg') {
-            modalpizzacuatrosabores.style.display = 'block';
-        } else if (imageUrl === 'pizza_continental.jpeg') {
-            modalpizzacontinental.style.display = 'block' ;
-        } else if (imageUrl === 'pepperoni_especial.jpeg') {
-            modalpizzapepperoniespecial.style.display = 'block' ;
-        } else if (imageUrl === 'gourmet_clasica.jpeg') {
-            modalpizzagourmetclasica.style.display = 'block' ;
-        } else if (imageUrl === 'pizza_deluxe.jpeg') {
-            modalpizzadeluxe.style.display = 'block' ;
+    <!-- Scripts -->
+    <script>
+        const cartasLink = document.getElementById('cartas-link');
+        const cartasContainer = document.getElementById('cartas');
+        const backButton = document.querySelector('.back-to-menu-button');
+        const buyNowButton = document.querySelector('.buy-now-button');
+        const modalAmericana = document.getElementById('imageModalAmericana');
+        const modalHawaiana = document.getElementById('imageModalHawaiana');
+        const modalArgentina = document.getElementById('imageModalArgentina');
+        const modalTropical = document.getElementById('imageModalTropical');
+        const modalPepperoni = document.getElementById('imageModalPepperoni');
+        const modalpizzavegetariana = document.getElementById('imageModalpizzavegetariana');
+        const modalPepperoPina = document.getElementById('imageModalPepperoPina');
+        const modalPioPollo = document.getElementById('imageModalPioPollo');
+        const modalPizzadelaCasa = document.getElementById('imageModalPizzadelaCasa');
+        const modalpizzacuatrosabores = document.getElementById('imageModalpizzacuatrosabores');
+        const modalpizzacontinental = document.getElementById('imageModalpizzacontinental');
+        const modalpizzapepperoniespecial = document.getElementById('imageModalpizzapepperoniespecial');
+        const modalpizzagourmetclasica = document.getElementById('imageModalpizzagourmetclasica');
+        const modalpizzadeluxe = document.getElementById('imageModalpizzadeluxe');
+        const modalImage = document.querySelector('.image-modal-content');
+        let totalItems = 0;
+        let totalPrice = 0;
+        let cart = [];
+    
+        // Función para mostrar la sección de cartas
+        cartasLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            cartasContainer.style.display = 'block';
+        });
+    
+        // Función para volver al menú principal
+        backButton.addEventListener('click', function() {
+            cartasContainer.style.display = 'none';
+        });
+    
+        // Función para agregar ítems al carrito
+        function agregarItem(producto, precio) {
+            totalItems++;
+            totalPrice += precio;
+            cart.push({ producto, precio });
+            alert('Agregado al carrito: ' + producto + ' - S/.' + precio.toFixed(2));
         }
-        modalImage.src = imageUrl;
-    }
-
-    function closeModalAmericana() {
-        modalAmericana.style.display = 'none';
-    }
-
-    function closeModalHawaiana() {
-        modalHawaiana.style.display = 'none';
-    }
-
-    function closeModalArgentina() {
-        modalArgentina.style.display = 'none';
-    }
-
-    function closeModalTropical() {
-        modalTropical.style.display = 'none';
-    }
-
-    function closeModalPepperoni() {
-        modalPepperoni.style.display = 'none';
-    }
-
-    function closeModalpizzavegetariana() {
-        modalpizzavegetariana.style.display = 'none';
-    }
-
-    function closeModalPepperoPina() {
-        modalPepperoPina.style.display = 'none';
-    }
-
-    function closeModalPioPollo() {
-        modalPioPollo.style.display = 'none';
-    }
-
-    function closeModalPizzadelaCasa() {
-        modalPizzadelaCasa.style.display = 'none';
-    }
-
-    function closeModalpizzacuatrosabores() {
-        modalpizzacuatrosabores.style.display = 'none';
-    }
-      
-    function closeModalpizzacontinental() {
-        modalpizzacontinental.style.display = 'none';
-    }
-
-    function closeModalpizzapepperoniespecial() {
-        modalpizzapepperoniespecial.style.display = 'none';
-    }
-
-    function closeModalpizzagourmetclasica() {
-        modalpizzagourmetclasica.style.display = 'none';
-    }
-
-    function closeModalpizzadeluxe() {
-        modalpizzadeluxe.style.display = 'none';
-    }
-      
-    function agregarItem(producto, precio) {
-        totalItems++;
-        totalPrice += precio;
-        cart.push({ producto, precio });
-        alert('Agregado al carrito: ' + producto + ' - S/.' + precio.toFixed(2));
-    }
     
-    function agregarAlCarritoClasico(producto, tamaño, precio) {
-    totalItems++;
-    totalPrice += precio;
-    cart.push({ producto: producto + ' - ' + tamaño, precio });
-    alert('Deseas agregar al carrito: ' + producto + ' - ' + tamaño + ' - S/.' + precio.toFixed(2));
-    
-    }
-
-    function showPromociones() {
-    const promociones = document.getElementById('promociones');
-    promociones.style.display = 'block';
-    
-    }
-
-    function closePromociones() {
-    const promociones = document.getElementById('promociones');
-    promociones.style.display = 'none';
-    
-    }
-    
-    function showSobreNosotros() {
-    const sobreNosotrosOverlay = document.getElementById('sobre-nosotros-overlay');
-    sobreNosotrosOverlay.style.display = 'block';
-    
-   }
-
-   function closeSobreNosotros() {
-    const sobreNosotrosOverlay = document.getElementById('sobre-nosotros-overlay');
-    sobreNosotrosOverlay.style.display = 'none';
-    
-   }
-   
-   
-   function showComoRealizarCompra() {
-    const comoRealizarCompraOverlay = document.getElementById('como-realizar-compra-overlay');
-    comoRealizarCompraOverlay.style.display = 'block';
-   }
-
-   function closeComoRealizarCompra() {
-    const comoRealizarCompraOverlay = document.getElementById('como-realizar-compra-overlay');
-    comoRealizarCompraOverlay.style.display = 'none';
-   }
-
-
-
-    buyNowButton.addEventListener('click', function() {
-        if (totalItems > 0) {
-            let message = 'Hola, me gustaría hacer un pedido:\n';
-            cart.forEach(item => {
-                message += `${item.producto} - S/.${item.precio.toFixed(2)}\n`;
-            });
-            message += `\nTotal de productos: ${totalItems}`;
-            message += `\nTotal a pagar: S/.${totalPrice.toFixed(2)}`;
-            window.location.href = 'https://wa.me/926173350?text=' + encodeURIComponent(message);
-        } else {
-            alert('No hay productos en el carrito.');
+        // Función para agregar pizzas clásicas al carrito
+        function agregarAlCarritoClasico(producto, tamaño, precio) {
+            totalItems++;
+            totalPrice += precio;
+            cart.push({ producto: producto + ' - ' + tamaño, precio });
+            alert('Deseas agregar al carrito: ' + producto + ' - ' + tamaño + ' - S/.' + precio.toFixed(2));
         }
-    });
-
-    document.addEventListener('scroll', function() {
-        backButton.style.display = (window.scrollY > 100) ? 'block' : 'none';
-    });
-
-    // Event listeners for closing modals
-    document.querySelector('#imageModalAmericana .image-modal-close').addEventListener('click', closeModalAmericana);
-    document.querySelector('#imageModalHawaiana .image-modal-close').addEventListener('click', closeModalHawaiana);
-    document.querySelector('#imageModalArgentina .image-modal-close').addEventListener('click', closeModalArgentina);
-    document.querySelector('#imageModalTropical .image-modal-close').addEventListener('click', closeModalTropical);
-    document.querySelector('#imageModalPepperoni .image-modal-close').addEventListener('click', closeModalPepperoni);
-    document.querySelector('#imageModalpizzavegetariana .image-modal-close').addEventListener('click', closeModalpizzavegetariana);
-    document.querySelector('#imageModalPepperoPina .image-modal-close').addEventListener('click', closeModalPepperoPina);
-    document.querySelector('#imageModalPioPollo .image-modal-close').addEventListener('click', closeModalPioPollo);
-    document.querySelector('#imageModalPizzadelaCasa .image-modal-close').addEventListener('click', closeModalPizzadelaCasa);
-    document.querySelector('#imageModalpizzacuatrosabores .image-modal-close').addEventListener('click', closeModalpizzacuatrosabores);
-    document.querySelector('#imageModalpizzacontinetal .image-modal-close').addEventListener('click', closeModalpizzacontinental);
-    document.querySelector('#imageModalpizzapepperoniespecial .image-modal-close').addEventListener('click', closeModalpizzapepperoniespecial);
-    document.querySelector('#imageModalpizzagourmetclasica .image-modal-close').addEventListener('click', closeModalpizzagourmetclasica);
-    document.querySelector('#imageModalpizzadeluxe .image-modal-close').addEventListener('click', closeModalpizzadeluxe);
-
-
-</script>
+    
+        // Función para el Botón 1: Redirigir a Drive
+        function verPromocionesGenerales() {
+            window.open("https://drive.google.com/file/d/1TUv9X6Z8XZ9XZ9XZ9XZ9XZ9XZ9XZ9XZ9/view?usp=sharing", "_blank");
+        }
+    
+        // Función para el Botón 2: Mostrar promociones de cliente frecuente
+        function mostrarPromocionesClienteFrecuente() {
+            document.getElementById('promociones-cliente-frecuente').style.display = 'block';
+            document.getElementById('promociones-cliente-nuevo').style.display = 'none';
+        }
+    
+        // Función para el Botón 3: Mostrar promociones de cliente nuevo
+        function mostrarPromocionesClienteNuevo() {
+            document.getElementById('promociones-cliente-nuevo').style.display = 'block';
+            document.getElementById('promociones-cliente-frecuente').style.display = 'none';
+        }
+    
+        // Función para agregar combos de cliente frecuente con 10% de descuento
+        function agregarComboFrecuente(combo, precio) {
+            const descuento = precio * 0.10;
+            const precioFinal = precio - descuento;
+            totalItems++;
+            totalPrice += precioFinal;
+            cart.push({ producto: combo, precio: precioFinal });
+            alert(`Agregado al carrito: ${combo} - S/.${precioFinal.toFixed(2)} (10% de descuento aplicado)`);
+        }
+    
+        // Función para agregar pizza con bebida gratis (cliente nuevo)
+        function agregarPizzaConBebida(pizza, precio) {
+            totalItems++;
+            totalPrice += precio;
+            cart.push({ producto: `${pizza} + Bebida Gratis`, precio });
+            alert(`Agregado al carrito: ${pizza} + Bebida Gratis - S/.${precio.toFixed(2)}`);
+        }
+    
+        // Función para cerrar la sección de promociones
+        function closePromociones() {
+            document.getElementById('promociones').style.display = 'none';
+            document.getElementById('promociones-cliente-frecuente').style.display = 'none';
+            document.getElementById('promociones-cliente-nuevo').style.display = 'none';
+        }
+    
+        // Función para mostrar imágenes en modal
+        function verImagen(imageUrl) {
+            if (imageUrl === 'pizza_americana.jpeg') {
+                modalAmericana.style.display = 'block';
+            } else if (imageUrl === 'pizza_hawaiana.jpeg') {
+                modalHawaiana.style.display = 'block';
+            } else if (imageUrl === 'pizza_argentina.jpeg') {
+                modalArgentina.style.display = 'block';
+            } else if (imageUrl === 'pizza_tropical.jpeg') {
+                modalTropical.style.display = 'block';
+            } else if (imageUrl === 'pizza_pepperoni.jpeg') {
+                modalPepperoni.style.display = 'block';
+            } else if (imageUrl === 'pizza_vegetariana.jpeg') {
+                modalpizzavegetariana.style.display = 'block';
+            } else if (imageUrl === 'pizza_pepperopina.jpeg') {
+                modalPepperoPina.style.display = 'block';
+            } else if (imageUrl === 'pizza_piopollo.jpeg') {
+                modalPioPollo.style.display = 'block';
+            } else if (imageUrl === 'pizza_casa.jpeg') {
+                modalPizzadelaCasa.style.display = 'block';
+            } else if (imageUrl === 'cuatro_sabores.jpeg') {
+                modalpizzacuatrosabores.style.display = 'block';
+            } else if (imageUrl === 'pizza_continental.jpeg') {
+                modalpizzacontinental.style.display = 'block';
+            } else if (imageUrl === 'pepperoni_especial.jpeg') {
+                modalpizzapepperoniespecial.style.display = 'block';
+            } else if (imageUrl === 'gourmet_clasica.jpeg') {
+                modalpizzagourmetclasica.style.display = 'block';
+            } else if (imageUrl === 'pizza_deluxe.jpeg') {
+                modalpizzadeluxe.style.display = 'block';
+            }
+            modalImage.src = imageUrl;
+        }
+    
+        // Funciones para cerrar modales
+        function closeModalAmericana() {
+            modalAmericana.style.display = 'none';
+        }
+    
+        function closeModalHawaiana() {
+            modalHawaiana.style.display = 'none';
+        }
+    
+        function closeModalArgentina() {
+            modalArgentina.style.display = 'none';
+        }
+    
+        function closeModalTropical() {
+            modalTropical.style.display = 'none';
+        }
+    
+        function closeModalPepperoni() {
+            modalPepperoni.style.display = 'none';
+        }
+    
+        function closeModalpizzavegetariana() {
+            modalpizzavegetariana.style.display = 'none';
+        }
+    
+        function closeModalPepperoPina() {
+            modalPepperoPina.style.display = 'none';
+        }
+    
+        function closeModalPioPollo() {
+            modalPioPollo.style.display = 'none';
+        }
+    
+        function closeModalPizzadelaCasa() {
+            modalPizzadelaCasa.style.display = 'none';
+        }
+    
+        function closeModalpizzacuatrosabores() {
+            modalpizzacuatrosabores.style.display = 'none';
+        }
+    
+        function closeModalpizzacontinental() {
+            modalpizzacontinental.style.display = 'none';
+        }
+    
+        function closeModalpizzapepperoniespecial() {
+            modalpizzapepperoniespecial.style.display = 'none';
+        }
+    
+        function closeModalpizzagourmetclasica() {
+            modalpizzagourmetclasica.style.display = 'none';
+        }
+    
+        function closeModalpizzadeluxe() {
+            modalpizzadeluxe.style.display = 'none';
+        }
+    
+        // Función para mostrar la sección de promociones
+        function showPromociones() {
+            const promociones = document.getElementById('promociones');
+            promociones.style.display = 'block';
+        }
+    
+        // Función para mostrar la sección "Sobre Nosotros"
+        function showSobreNosotros() {
+            const sobreNosotrosOverlay = document.getElementById('sobre-nosotros-overlay');
+            sobreNosotrosOverlay.style.display = 'block';
+        }
+    
+        // Función para cerrar la sección "Sobre Nosotros"
+        function closeSobreNosotros() {
+            const sobreNosotrosOverlay = document.getElementById('sobre-nosotros-overlay');
+            sobreNosotrosOverlay.style.display = 'none';
+        }
+    
+        // Función para mostrar la sección "Cómo realizar compra"
+        function showComoRealizarCompra() {
+            const comoRealizarCompraOverlay = document.getElementById('como-realizar-compra-overlay');
+            comoRealizarCompraOverlay.style.display = 'block';
+        }
+    
+        // Función para cerrar la sección "Cómo realizar compra"
+        function closeComoRealizarCompra() {
+            const comoRealizarCompraOverlay = document.getElementById('como-realizar-compra-overlay');
+            comoRealizarCompraOverlay.style.display = 'none';
+        }
+    
+        // Función para realizar la compra
+        buyNowButton.addEventListener('click', function() {
+            if (totalItems > 0) {
+                let message = 'Hola, me gustaría hacer un pedido:\n';
+                cart.forEach(item => {
+                    message += `${item.producto} - S/.${item.precio.toFixed(2)}\n`;
+                });
+                message += `\nTotal de productos: ${totalItems}`;
+                message += `\nTotal a pagar: S/.${totalPrice.toFixed(2)}`;
+                window.location.href = 'https://wa.me/926173350?text=' + encodeURIComponent(message);
+            } else {
+                alert('No hay productos en el carrito.');
+            }
+        });
+    
+        // Event listener para mostrar el botón de volver al menú cuando se hace scroll
+        document.addEventListener('scroll', function() {
+            backButton.style.display = (window.scrollY > 100) ? 'block' : 'none';
+        });
+    
+        // Event listeners para cerrar modales
+        document.querySelector('#imageModalAmericana .image-modal-close').addEventListener('click', closeModalAmericana);
+        document.querySelector('#imageModalHawaiana .image-modal-close').addEventListener('click', closeModalHawaiana);
+        document.querySelector('#imageModalArgentina .image-modal-close').addEventListener('click', closeModalArgentina);
+        document.querySelector('#imageModalTropical .image-modal-close').addEventListener('click', closeModalTropical);
+        document.querySelector('#imageModalPepperoni .image-modal-close').addEventListener('click', closeModalPepperoni);
+        document.querySelector('#imageModalpizzavegetariana .image-modal-close').addEventListener('click', closeModalpizzavegetariana);
+        document.querySelector('#imageModalPepperoPina .image-modal-close').addEventListener('click', closeModalPepperoPina);
+        document.querySelector('#imageModalPioPollo .image-modal-close').addEventListener('click', closeModalPioPollo);
+        document.querySelector('#imageModalPizzadelaCasa .image-modal-close').addEventListener('click', closeModalPizzadelaCasa);
+        document.querySelector('#imageModalpizzacuatrosabores .image-modal-close').addEventListener('click', closeModalpizzacuatrosabores);
+        document.querySelector('#imageModalpizzacontinental .image-modal-close').addEventListener('click', closeModalpizzacontinental);
+        document.querySelector('#imageModalpizzapepperoniespecial .image-modal-close').addEventListener('click', closeModalpizzapepperoniespecial);
+        document.querySelector('#imageModalpizzagourmetclasica .image-modal-close').addEventListener('click', closeModalpizzagourmetclasica);
+        document.querySelector('#imageModalpizzadeluxe .image-modal-close').addEventListener('click', closeModalpizzadeluxe);
+    </script>
 </body>
 </html>
