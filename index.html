@@ -889,20 +889,34 @@ function agregarCombo(combo, precio) {
         }
     
         // Función para realizar la compra
-        buyNowButton.addEventListener('click', function() {
-            if (totalItems > 0) {
-                let message = 'Hola, me gustaría hacer un pedido:\n';
-                cart.forEach(item => {
-                    message += `${item.producto} - S/.${item.precio.toFixed(2)}\n`;
-                });
-                message += `\nTotal de productos: ${totalItems}`;
-                message += `\nTotal a pagar: S/.${totalPrice.toFixed(2)}`;
-                window.location.href = 'https://wa.me/926173350?text=' + encodeURIComponent(message);
-            } else {
-                alert('No hay productos en el carrito.');
-            }
+function realizarCompra() {
+    if (totalItems > 0) {
+        let message = 'Hola, me gustaría hacer un pedido:\n';
+        cart.forEach(item => {
+            message += `${item.producto} - S/.${item.precio.toFixed(2)}\n`;
         });
-    
+        message += `\nTotal de productos: ${totalItems}`;
+        message += `\nTotal a pagar: S/.${totalPrice.toFixed(2)}`;
+
+        // Número de teléfono en formato internacional
+        const phoneNumber = '51926173350'; // Asegúrate de que este número sea correcto
+
+        // Generar el enlace de WhatsApp
+        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+        // Redirigir a WhatsApp
+        window.location.href = url;
+    } else {
+        alert('No hay productos en el carrito.');
+    }
+}
+
+// Vincular el evento "click" a todos los botones "Realizar compra"
+document.querySelectorAll('.buy-now-button').forEach(button => {
+    button.addEventListener('click', realizarCompra);
+});
+
+        
         // Event listener para mostrar el botón de volver al menú cuando se hace scroll
         document.addEventListener('scroll', function() {
             backButton.style.display = (window.scrollY > 100) ? 'block' : 'none';
