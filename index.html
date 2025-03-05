@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casa de las Pizzas</title>
     <style>
-        /* Animación de fondo */
-        @keyframes animatedBackground {
+        /* Animación de fondo dinámico */
+        @keyframes waveAnimation {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
@@ -17,10 +17,12 @@
             margin: 0;
             padding: 0;
             background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee, #f6d365);
-            background-size: 400% 400%;
-            animation: animatedBackground 15s ease infinite;
+            background-size: 200% 200%;
+            animation: waveAnimation 10s ease infinite;
             color: #333;
         }
+
+       
 
         header {
             background-image: url("pizza_logo.png");
@@ -602,7 +604,7 @@
     </main>
 
     <footer>
-        &copy; 2024 Fernando José Zapata Aquino.
+        &copy; Desarrolador: Zapata Aquino-2024(tegnology2.0) 
     </footer>
 
     <!-- Modal para mostrar imágenes -->
